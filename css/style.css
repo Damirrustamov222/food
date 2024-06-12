@@ -593,7 +593,21 @@ a {
     text-align: right
 }
 
-.promotion__timer .timer {
+.promotion__timer .timer_one  {
+    margin-top: 60px;
+    padding-left: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.timer_two {
+    margin-top: 60px;
+    padding-left: 95px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center
+}
+.timer_one  {
     margin-top: 60px;
     padding-left: 95px;
     display: flex;
@@ -737,3 +751,6 @@ a {
         opacity: 1;
     }
 }
+
+
+
