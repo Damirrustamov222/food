@@ -95,7 +95,7 @@ function getRemainingTime(endTime) {
         minutes = Math.floor((t / 1000) / 60 % 60),
         seconds = Math.floor((t / 1000) % 60);
     return {
-         t,
+       total:  t,
         days,
         hours,
         minutes,
