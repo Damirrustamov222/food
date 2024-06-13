@@ -131,7 +131,7 @@ function setTimer(endTime, selector) {
 
              poof()
             
-
+        return
         }
     }
 
@@ -179,8 +179,8 @@ function poof() {
     });
 }
 
-
-setTimer(deadline, '.timer_two');
 setTimer(newyear, '.timer_one'); 
+setTimer(deadline, '.timer_two');
+
 
 
