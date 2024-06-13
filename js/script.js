@@ -85,7 +85,7 @@ close.onclick = () => {
 
 let deadline = "2024-06-16 00:00";
 let newyear = "2025-01-01 00:00";
-const jsConfetti = new JSConfetti()
+
 
 
 function getRemainingTime(endTime) {
@@ -95,7 +95,7 @@ function getRemainingTime(endTime) {
         minutes = Math.floor((t / 1000) / 60 % 60),
         seconds = Math.floor((t / 1000) % 60);
     return {
-        total: t,
+         t,
         days,
         hours,
         minutes,
@@ -126,8 +126,7 @@ function setTimer(endTime, selector) {
             hours.innerHTML = 0;
             minutes.innerHTML = 0;
             seconds.innerHTML = 0;
-                         jsConfetti.addConfetti().then(() => jsConfetti.addConfetti())
-   
+                      
 
 
              poof()
