@@ -83,7 +83,7 @@ close.onclick = () => {
 
 
 
-let deadline = "2024-06-12 16:32";
+let deadline = "2024-06-16 00:00";
 let newyear = "2025-01-01 00:00";
 
 function getRemainingTime(endTime) {
@@ -124,13 +124,60 @@ function setTimer(endTime, selector) {
             hours.innerHTML = 0;
             minutes.innerHTML = 0;
             seconds.innerHTML = 0;
+
+
+            // poof()
+            
+
         }
     }
 
     NewTimer(); 
 }
 
-setTimer(deadline, '.timer_two');
-setTimer(newyear, '.timer_one');
+function poof() {
+    const confettiCount = 100, confetti = [], container = document.createElement('div');
+    Object.assign(container.style, { position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none', overflow: 'hidden' });
+    document.body.appendChild(container);
+
+    for (let i = 0; i < confettiCount; i++) {
+        const confetto = document.createElement('div');
+        Object.assign(confetto.style, {
+            position: 'absolute',
+            width: '10px',
+            height: '10px',
+            backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`
+        });
+        container.appendChild(confetto);
+        confetti.push(confetto);
+    }
+
+    let prev = undefined;
+    requestAnimationFrame(function loop(timestamp) {
+        const delta = prev ? timestamp - prev : 0;
+        prev = timestamp;
+        const height = window.innerHeight;
+
+        for (let i = confetti.length - 1; i >= 0; i--) {
+            const confetto = confetti[i];
+            confetto.style.top = `${parseFloat(confetto.style.top) + delta * 0.05}px`;
+            if (parseFloat(confetto.style.top) > height) {
+                container.removeChild(confetto);
+                confetti.splice(i, 1);
+            }
+        }
+
+        if (confetti.length)
+            requestAnimationFrame(loop);
+        else
+            document.body.removeChild(container);
+    });
+}
+
+
+setTimer(newyear, '.timer_one'); setTimer(deadline, '.timer_two');
+
 
 
