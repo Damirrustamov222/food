@@ -177,7 +177,7 @@ function poof() {
 }
 
 
-setTimer(newyear, '.timer_one'); setTimer(deadline, '.timer_two');
-
+setTimer(deadline, '.timer_two');
+setTimer(newyear, '.timer_one'); 
 
 
