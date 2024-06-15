@@ -48,7 +48,7 @@ function slidesShow(n) {
         slide.classList.add('hide');
     });
 
-    slides[slideIndex - 1].classList.remove('hide');
+    slides[slideIndex - 1].classList.remove('hide', 'fade');
 
     if (slideIndex < 10) {
         current.innerHTML = `0${slideIndex}`;
