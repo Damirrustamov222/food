@@ -45,10 +45,10 @@ function slidesShow(n) {
     }
 
     slides.forEach((slide) => {
-        slide.classList.add('hide');
+        slide.classList.add('hide', 'fade');
     });
 
-    slides[slideIndex - 1].classList.remove('hide', 'fade');
+    slides[slideIndex - 1].classList.remove('hide');
 
     if (slideIndex < 10) {
         current.innerHTML = `0${slideIndex}`;
